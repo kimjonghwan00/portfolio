@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로젝트 | 종환</title>
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="./favicon.ico">
+    <style>
+        .filter-btn.active {
+            background-color: var(--primary) !important;
+            color: white !important;
+            border-color: var(--primary) !important;
+        }
+
+        .portfolio-item.hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top px-4">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="./image/logo.png" alt="Logo" width="30" height="30"
+                    class="d-inline-block align-text-top me-2">
+                종환이의포트폴리오
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">홈</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="portfolio.html">포트폴리오</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile.html">프로필</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="py-5" style="background: linear-gradient(to bottom, #0f172a, #1e293b);">
+        <div class="container py-5 text-center">
+            <h1 class="display-4 fw-bold mb-3 text-white">내 프로젝트</h1>
+            <p class="lead text-secondary">기획부터 디자인까지, 정성을 담은 작업물들입니다.</p>
+        </div>
+    </section>
+
+    <main class="flex-grow-1">
+        <!-- Filter Buttons -->
+        <div class="container py-4">
+            <div class="row g-4" id="portfolio-grid">
+
+                <!-- ETHOS -->
+                <div class="col-md-6 col-lg-4 portfolio-item" data-category="PM">
+                    <div class="card shadow-sm border-0">
+                        <img src="./image/ethos.png" class="card-img-top card-img-contain" alt="ETHOS 프로젝트">
+                        <div class="card-body">
+                            <span class="category-tag">01</span>
+                            <h5 class="card-title">ETHOS</h5>
+                            <p class="card-text text-muted small">사용자 경험을 최우선으로 설계한 기획 프로젝트</p>
+                            <a href="ETHOS.html" class="btn btn-outline-primary btn-sm">보러가기</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 문장투시경 -->
+                <div class="col-md-6 col-lg-4 portfolio-item" data-category="PM">
+                    <div class="card shadow-sm border-0">
+                        <img src="./image/gray.png" class="card-img-top card-img-contain" alt="문장투시경 프로젝트">
+                        <div class="card-body">
+                            <span class="category-tag">02</span>
+                            <h5 class="card-title">문장투시경</h5>
+                            <p class="card-text text-muted small">간결하고 직관적인 서비스 기획</p>
+                            <a href="g-ray.html" class="btn btn-outline-primary btn-sm">보러가기</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 데이터헌터스 -->
+                <div class="col-md-6 col-lg-4 portfolio-item" data-category="PM">
+                    <div class="card shadow-sm border-0">
+                        <img src="./image/우주탐정 로고.png" class="card-img-top card-img-contain" alt="aI 우주탐정단">
+                        <div class="card-body">
+                            <span class="category-tag">03</span>
+                            <h5 class="card-title">aI 우주탐정단</h5>
+                            <p class="card-text text-muted small">신입 우주탐정이 되어서 "ai리터러시"대해 학습을 하는 교육 콘텐츠</p>
+                            <a href="Ujutamjeongdan.html" class="btn btn-outline-primary btn-sm">보러가기</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <p class="mb-2 footer-text">&copy; 2026 Jonghwan. All rights reserved.</p>
+            <p class="small text-muted mb-0">Designed for Excellence</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5.3 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function applyFilter(filter) {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            const activeBtn = document.querySelector(`.filter-btn[data-filter="${filter}"]`);
+            if (activeBtn) activeBtn.classList.add('active');
+
+            document.querySelectorAll('.portfolio-item').forEach(item => {
+                if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+        }
+
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                applyFilter(btn.getAttribute('data-filter'));
+            });
+        });
+
+        window.addEventListener('load', () => {
+            const params = new URLSearchParams(window.location.search);
+            const filter = params.get('filter') || 'all';
+            applyFilter(filter);
+        });
+    </script>
+</body>
+
+</html>

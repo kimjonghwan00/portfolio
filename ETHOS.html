@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ETHOS</title>
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="./ethos.ico">
+    <style>
+        .project-hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            padding: 100px 0;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .nav-pills .nav-link {
+            color: var(--text-dim);
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 12px 24px;
+            margin: 0 5px;
+            transition: var(--transition);
+        }
+
+        .nav-pills .nav-link.active {
+            background: var(--primary) !important;
+            color: white !important;
+            box-shadow: 0 8px 20px var(--primary-glow);
+        }
+
+        .tab-pane {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .contribution-card {
+            border-left: 4px solid var(--primary);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top px-4">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="./image/logo.png" alt="Logo" width="30" height="30"
+                    class="d-inline-block align-text-top me-2">
+                종환이의포트폴리오
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">홈</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="portfolio.html">포트폴리오</a></li>
+                    <li class="nav-item"><a class="nav-link" href="profile.html">프로필</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Hero -->
+    <section class="project-hero text-center">
+        <div class="container">
+            <span class="category-tag">PM / UI/UX Design</span>
+            <h1 class="display-3 fw-bold text-white mb-3">ETHOS</h1>
+            <p class="lead text-secondary mx-auto" style="max-width: 700px;">사용자 경험을 최우선으로 설계한 데이터 기반 지능형 서비스</p>
+        </div>
+    </section>
+
+    <!-- Project Content Tabs -->
+    <main class="py-5">
+        <div class="container">
+            <!-- Tab Menu -->
+            <ul class="nav nav-pills justify-content-center mb-5" id="pills-tab" role="tablist">
+                <li class="nav-item">
+                    <button class="nav-link active" id="overview-tab" data-bs-toggle="pill"
+                        data-bs-target="#overview">역할 및 기여도</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" id="planning-tab" data-bs-toggle="pill"
+                        data-bs-target="#planning">기획</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" id="storyboard-tab" data-bs-toggle="pill"
+                        data-bs-target="#storyboard">스토리보드</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" id="video-tab" data-bs-toggle="pill" data-bs-target="#video">시연 영상</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" id="mvp-tab" data-bs-toggle="pill" data-bs-target="#mvp">MVP 사이트</button>
+                </li>
+            </ul>
+
+            <!-- Tab Content -->
+            <div class="tab-content" id="pills-tabContent">
+
+                <!-- 1. Overview & Contribution -->
+                <div class="tab-pane fade show active" id="overview" role="tabpanel">
+                    <div class="row g-4">
+                        <!-- 메인 개요 카드 -->
+                        <div class="col-lg-8">
+                            <div class="card p-5 bg-glass border-0 h-100">
+                                <div class="d-flex justify-content-between align-items-start mb-4">
+                                    <h3 class="fw-bold text-white mb-0">프로젝트 상세 개요</h3>
+                                    <div class="text-end">
+                                        <span class="badge bg-white bg-opacity-10 text-secondary fw-normal">제작 기간:
+                                            2026.03.04 - 2026.03.27</span>
+                                    </div>
+                                </div>
+
+                                <div class="row g-4">
+                                    <!-- 프로젝트 목적 -->
+                                    <div class="col-md-6">
+                                        <h5 class="text-primary fw-bold mb-3"><i class="bi bi-bullseye me-2"></i>프로젝트 목적
+                                        </h5>
+                                        <ul class="text-secondary small ps-3 mb-0" style="line-height: 1.8;">
+                                            <li>스스로 문제를 발견하고 해결하는 능동적 학습 환경 제공</li>
+                                            <li>AI의 편향, 데이터 윤리 등 올바른 AI 활용 문화를 확산할 수 있는 콘텐츠</li>
+                                            <li>즉시 도입 가능한 AI 기반 학습 콘텐츠 기획 및 서비스 모델 구현</li>
+                                        </ul>
+                                    </div>
+                                    <!-- 활용방안 및 기대효과 -->
+                                    <div class="col-md-6">
+                                        <h5 class="text-primary fw-bold mb-3"><i
+                                                class="bi bi-graph-up-arrow me-2"></i>활용방안 및 기대효과</h5>
+                                        <div class="mb-3">
+                                            <p class="text-white small mb-1 fw-bold">비즈니스 활용</p>
+                                            <ul class="text-secondary small ps-3 mb-0" style="line-height: 1.6;">
+                                                <li>AI 기본법 시행에 따른 기업 의무 교육 수요 대응</li>
+                                                <li>웹 기반 서비스로 별도 설치 없이 즉시 도입 가능</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <p class="text-white small mb-1 fw-bold">기대효과</p>
+                                            <ul class="text-secondary small ps-3 mb-0" style="line-height: 1.6;">
+                                                <li>AI 사고 예방 및 비용 절감 (수백억 규모 피해 예방)</li>
+                                                <li>"책임 있는 AI 개발 조직"으로서 대외 신뢰도 확보</li>
+                                                <li>설득 경험을 통한 윤리적 판단 기준 체화</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <hr class="my-4 border-light opacity-10">
+
+                                <!-- 나의 역할 및 기여도 -->
+                                <div class="row g-4">
+                                    <div class="col-md-6">
+                                        <div class="contribution-card p-3 bg-white bg-opacity-5 rounded-3 h-100">
+                                            <h5 class="fw-bold text-primary mb-3"><i
+                                                    class="bi bi-person-check me-2"></i>나의 역할</h5>
+                                            <ul class="small text-secondary ps-3 mb-0">
+                                                <li>팀장</li>
+                                                <li>윤리교육 영상 파트 부분 제작</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="contribution-card p-3 bg-white bg-opacity-5 rounded-3 h-100">
+                                            <h5 class="fw-bold text-primary mb-3"><i
+                                                    class="bi bi-pie-chart me-2"></i>기여도</h5>
+                                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                                <span class="small text-secondary">영상 파트 제작</span>
+                                                <span class="fw-bold text-white">100%</span>
+                                            </div>
+                                            <div class="progress bg-dark" style="height: 6px;">
+                                                <div class="progress-bar bg-primary" role="progressbar"
+                                                    style="width: 100%;" aria-valuenow="100" aria-valuemin="0"
+                                                    aria-valuemax="100"></div>
+                                            </div>
+                                            <p class="small text-muted mt-2 mb-0">영상 콘텐츠 100% 완성</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 우측 사이드바: 장비 및 일정 -->
+                        <div class="col-lg-4">
+                            <!-- 활용장비 카드 -->
+                            <div class="card p-4 bg-glass border-0 mb-4">
+                                <h5 class="fw-bold mb-4 text-white"><i class="bi bi-cpu me-2 text-primary"></i>활용장비 및 재료
+                                </h5>
+                                <div class="mb-3">
+                                    <p class="text-primary small fw-bold mb-2">개발 환경 & 협업</p>
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <span class="badge bg-white bg-opacity-10 text-white fw-normal">Google
+                                            Antigravity</span>
+                                        <span
+                                            class="badge bg-white bg-opacity-10 text-white fw-normal">Mattermost</span>
+                                        <span class="badge bg-white bg-opacity-10 text-white fw-normal">Figma</span>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <p class="text-primary small fw-bold mb-2">AI / 외부 서비스</p>
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <span class="badge bg-white bg-opacity-10 text-white fw-normal">Claude</span>
+                                        <span class="badge bg-white bg-opacity-10 text-white fw-normal">Gemini</span>
+                                        <span class="badge bg-white bg-opacity-10 text-white fw-normal">ChatGPT</span>
+                                        <span class="badge bg-white bg-opacity-10 text-white fw-normal">YouTube</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="text-primary small fw-bold mb-2">프론트엔드</p>
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <span
+                                            class="badge bg-white bg-opacity-10 text-white fw-normal p-2">Python</span>
+                                        <span
+                                            class="badge bg-white bg-opacity-10 text-white fw-normal p-2">HTML/CSS</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Planning & Storyboard -->
+                <div class="tab-pane fade" id="planning" role="tabpanel">
+                    <div class="card p-4 bg-glass border-0 shadow-lg">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h3 class="fw-bold mb-0 text-white">기획서</h3>
+                            <a href="./pdf/05.pdf" target="_blank" class="btn btn-outline-primary btn-sm">PDF 크게보기</a>
+                        </div>
+                        <div class="ratio ratio-16x9 rounded-4 overflow-hidden shadow">
+                            <iframe src="./pdf/05.pdf" title="ETHOS 기획서" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+                <!-- 2. Planning & Storyboard -->
+                <div class="tab-pane fade" id="storyboard" role="tabpanel">
+                    <div class="card p-4 bg-glass border-0 shadow-lg">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h3 class="fw-bold mb-0 text-white">스토리보드</h3>
+                            <a href="./pdf/05-1.pdf" target="_blank" class="btn btn-outline-primary btn-sm">PDF 크게보기</a>
+                        </div>
+                        <div class="ratio ratio-16x9 rounded-4 overflow-hidden shadow">
+                            <iframe src="./pdf/05-1.pdf" title="ETHOS 스토리보드" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Video -->
+                <div class="tab-pane fade" id="video" role="tabpanel">
+                    <div class="row g-5">
+                        <div class="col-lg-10 mx-auto">
+                            <h3 class="fw-bold mb-5 text-white text-center">서비스 시연 영상 </h3>
+
+                            <!-- Video 01 -->
+                            <div class="mb-5 pb-5 border-bottom border-light border-opacity-10">
+                                <h4 class="text-white mb-4 fw-bold"><i class="bi bi-1-circle me-2 text-primary"></i>서비스
+                                    시연영상</h4>
+                                <div
+                                    class="ratio ratio-16x9 rounded-4 overflow-hidden shadow-lg border border-light border-opacity-10">
+                                    <video controls preload="metadata" class="w-100 h-100"
+                                        style="background-color: #000;">
+                                        <source src="./video/ETHOS.mp4" type="video/mp4">
+                                        브라우저가 동영상을 지원하지 않습니다.
+                                        <a href="./video/ETHOS.mp4" target="_blank" class="text-primary">여기를 클릭하여 동영상을
+                                            직접 확인하세요.</a>
+                                    </video>
+                                </div>
+                                <p class="mt-3 text-secondary">로그인 부터 윤리영상 시청 및 챗봇대화를 한뒤 수료증까지 이어지게 됩니다.</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. MVP -->
+                <div class="tab-pane fade" id="mvp" role="tabpanel">
+                    <div class="card p-5 bg-glass border-0 text-center">
+                        <div class="mb-4 display-3 text-primary">
+                            <i class="bi bi-rocket-takeoff"></i>
+                        </div>
+                        <h3 class="fw-bold mb-3 text-white">ETHOS MVP 사이트</h3>
+                        <div class="d-flex justify-content-center gap-3">
+                            <a href="https://ethos-woad.vercel.app/" target="_blank"
+                                class="btn btn-primary btn-lg px-5 py-3">
+                                사이트 방문하기
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-5">
+        <div class="container">
+            <p class="mb-2 footer-text">&copy; 2026 Jonghwan. All rights reserved.</p>
+            <p class="small text-muted mb-0">Designed for Excellence</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5.3 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</body>
+
+</html>
